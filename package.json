@@ -5,10 +5,12 @@
   "author": "Rizwan Zaheer",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon server.js",
-    "json:server": "json-server --watch db.json"
+    "dev:server": "nodemon server.js",
+    "json:server": "json-server --watch db.json",
+    "dev": "concurrently \"npm:dev:server\" \"npm:json:server\" "
   },
   "dependencies": {
+    "concurrently": "^4.0.1",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^0.13.2",
